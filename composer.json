@@ -1,6 +1,7 @@
 {
     "name": "bunkua/hexlet_php_project1",
     "description": "First project on Hexlet called \"Brain games\"",
+    "license": "MIT",
     "authors": [
         {
             "name": "bunkua"
