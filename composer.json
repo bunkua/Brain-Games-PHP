@@ -7,7 +7,14 @@
             "name": "bunkua"
         }
     ],
-    "require": {},
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    },
     "bin": [
         "bin/brain-games"
     ]
