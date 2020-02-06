@@ -10,10 +10,7 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/checkAnswer.php",
-            "src/correctAnswer.php",
-            "src/isEven.php",
-            "src/makeNumber.php",
+            "src/Logic.php",
             "src/playGame.php"
         ]
     },
