@@ -16,6 +16,9 @@ function greeting($gameName)
         case 'calc':
             line('What is the result of the expression?');
             break;
+        case 'gcd':
+            line('Find the greatest common divisor of given numbers.');
+            break;
     }
 
     $name = prompt('May I have your name?');

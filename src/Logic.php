@@ -29,3 +29,19 @@ function getCalcAnswer($a, $b, $operation)
             return $a * $b;
     }
 }
+
+function getGcdAnswer($a, $b)
+{
+    $a = abs($a);
+    $b = abs($b);
+
+    while ($a != $b) {
+        if ($a > $b) {
+            $a -= $b;
+        } else {
+            $b -= $a;
+        }
+    }
+    
+    return $a;
+}
