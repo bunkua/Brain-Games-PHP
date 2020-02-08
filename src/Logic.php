@@ -2,28 +2,30 @@
 
 namespace BrainGames\Logic;
 
-function checkAnswer(bool $isEven, string $answer)
+function checkAnswer($correctAnswer, $givenAnswer)
 {
-    $boolAnswer = ($answer === 'yes');
-    return ($isEven === $boolAnswer);
+    return [$correctAnswer === $givenAnswer, $givenAnswer, $correctAnswer];
 }
 
-function correctAnswer(bool $isEven)
+
+function makeNumber($min = 0, $max = 20)
 {
-    switch ($isEven) {
-        case 0:
-            return 'no';
-        case 1:
-            return 'yes';
+    return rand($min, $max);
+}
+
+function getEvenAnswer($number)
+{
+    return ($number % 2 === 0) ? 'yes' : 'no';
+}
+
+function getCalcAnswer($a, $b, $operation)
+{
+    switch ($operation) {
+        case '+':
+            return $a + $b;
+        case '-':
+            return $a - $b;
+        case '*':
+            return $a * $b;
     }
-}
-
-function isEven($number)
-{
-    return ($number % 2 === 0);
-}
-
-function makeNumber()
-{
-    return rand(0, 100);
 }

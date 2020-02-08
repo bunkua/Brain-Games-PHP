@@ -2,21 +2,15 @@
 
 namespace BrainGames\Cli;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Cli\greeting;
 use function BrainGames\Logic\playGame;
+use function BrainGames\Cli\gameOver;
 
-function run()
+function run($gameName)
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $playerName = greeting($gameName);
 
-    $result = playGame();
-    
-    if (!$result) {
-        line("Let's try again, %s!", $name);
-    } else {
-        line("Congratulations, %s!", $name);
-    }
+    $gameResult = playGame($gameName);
+
+    gameOver($gameResult, $playerName);
 }

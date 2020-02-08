@@ -10,4 +10,4 @@ if (file_exists($autoloadPath1)) {
     include_once $autoloadPath2;
 }
 
-BrainGames\Cli\run('even');
+BrainGames\Cli\run('calc');
