@@ -13,6 +13,17 @@ function makeNumber($min = 0, $max = 20)
     return rand($min, $max);
 }
 
+function makeProgression($start = 0, $step = 1, $qty = 10)
+{
+    $result = [];
+    for ($i = 0; $i < $qty; $i++) {
+        $item = $start + ($step * $i);
+        array_push($result, $item);
+    }
+
+    return $result;
+}
+
 function getEvenAnswer($number)
 {
     return ($number % 2 === 0) ? 'yes' : 'no';
