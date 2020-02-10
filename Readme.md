@@ -6,4 +6,5 @@
 [![Build Status](https://travis-ci.com/bunkua/php-project-lvl1.svg?branch=master)](https://travis-ci.com/bunkua/php-project-lvl1)
 
 ### Usage
-[![asciicast](https://asciinema.org/a/PHLlgZiiAPAHlUTzz5SHtMrZo.svg)](https://asciinema.org/a/PHLlgZiiAPAHlUTzz5SHtMrZo)
+<asciinema-player src="/298628.cast" cols="80" rows="24"></asciinema-player>
+<script src="/asciinema-player.js"></script>
