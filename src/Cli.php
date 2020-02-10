@@ -2,9 +2,9 @@
 
 namespace BrainGames\Cli;
 
-use function BrainGames\Cli\greeting;
+use function BrainGames\CliMessage\greeting;
+use function BrainGames\CliMessage\gameOver;
 use function BrainGames\Logic\playGame;
-use function BrainGames\Cli\gameOver;
 
 function run($gameName)
 {

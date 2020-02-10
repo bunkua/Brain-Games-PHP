@@ -1,8 +1,8 @@
 <?php
 
-use function BrainGames\Cli\getPlayerAnswer;
+use function BrainGames\CliMessage\getPlayerAnswer;
 use function BrainGames\Logic\makeNumber;
-use function BrainGames\Logic\isEven;
+use function BrainGames\Logic\getEvenAnswer;
 use function BrainGames\Logic\checkAnswer;
 
 function playRound()

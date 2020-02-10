@@ -1,6 +1,6 @@
 <?php
 
-use function BrainGames\Cli\getPlayerAnswer;
+use function BrainGames\CliMessage\getPlayerAnswer;
 use function BrainGames\Logic\makeNumber;
 use function BrainGames\Logic\checkAnswer;
 use function BrainGames\Logic\makeProgression;

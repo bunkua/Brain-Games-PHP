@@ -1,7 +1,10 @@
 {
     "name": "bunkua/hexlet_php_project1",
     "description": "First project on Hexlet called \"Brain games\"",
+    "keywords" : ["hexlet", "project", "brain-games"],
+    "type": "project",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "bunkua"
@@ -12,7 +15,7 @@
             "src/Cli.php",
             "src/Logic.php",
             "src/playGame.php",
-            "src/CliInteraction.php"
+            "src/CliMessage.php"
         ]
     },
     "require": {

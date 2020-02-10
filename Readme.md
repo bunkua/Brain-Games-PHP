@@ -15,3 +15,7 @@
 - Brain Calc game usage
 
 [![asciicast](https://asciinema.org/a/KO0mbkmsV2B4rXeK8Bq62zYGm.svg)](https://asciinema.org/a/KO0mbkmsV2B4rXeK8Bq62zYGm)
+
+
+- Brain GCD game usage
+
