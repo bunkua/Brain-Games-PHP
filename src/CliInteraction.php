@@ -19,6 +19,12 @@ function greeting($gameName)
         case 'gcd':
             line('Find the greatest common divisor of given numbers.');
             break;
+        case 'prime':
+            line("Does a given number prime. Type 'yes' or 'no'");
+            break;
+        case 'progression':
+            line("Type missed element of progression");
+            break;
     }
 
     $name = prompt('May I have your name?');

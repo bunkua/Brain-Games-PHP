@@ -6,5 +6,12 @@
 [![Build Status](https://travis-ci.com/bunkua/php-project-lvl1.svg?branch=master)](https://travis-ci.com/bunkua/php-project-lvl1)
 
 ### Usage
-<asciinema-player src="/298628.cast" cols="80" rows="24"></asciinema-player>
-<script src="/asciinema-player.js"></script>
+- Brain Even game usage
+
+
+[![asciicast](https://asciinema.org/a/PHLlgZiiAPAHlUTzz5SHtMrZo.svg)](https://asciinema.org/a/PHLlgZiiAPAHlUTzz5SHtMrZo)
+
+
+- Brain Calc game usage
+
+[![asciicast](https://asciinema.org/a/KO0mbkmsV2B4rXeK8Bq62zYGm.svg)](https://asciinema.org/a/KO0mbkmsV2B4rXeK8Bq62zYGm)
