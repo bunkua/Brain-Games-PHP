@@ -12,10 +12,13 @@
     ],
     "autoload": {
         "files": [
-            "src/Cli.php",
-            "src/Logic.php",
-            "src/playGame.php",
-            "src/CliMessage.php"
+            "src/engine.php",
+            "src/games/calc.php",
+            "src/games/even.php",
+            "src/games/gcd.php",
+            "src/games/prime.php",
+            "src/games/progression.php",
+            "src/Helpers.php"
         ]
     },
     "require": {

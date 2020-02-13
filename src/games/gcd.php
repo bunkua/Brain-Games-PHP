@@ -1,19 +1,38 @@
 <?php
 
-use function BrainGames\CliMessage\getPlayerAnswer;
-use function BrainGames\Logic\makeNumber;
-use function BrainGames\Logic\getGcdAnswer;
-use function BrainGames\Logic\checkAnswer;
+namespace BrainGames\Gcd;
 
-function playRound()
+use function BrainGames\Helpers\makeNumber;
+use function BrainGames\Engine\execute;
+
+function play()
 {
-    $a = makeNumber();
-    $b = makeNumber();
+    $task = "Find the greatest common divisor of given numbers.";
 
-    $question = "$a $b";
-    $correctAnswer = getGcdAnswer($a, $b);
+    $generator = function () {
+        $a = makeNumber();
+        $b = makeNumber();
+        $question = "$a and $b";
+        $answer = getAnswer($a, $b);
 
-    $answer = (int) getPlayerAnswer($question);
+        return [$question, $answer];
+    };
 
-    return checkAnswer($correctAnswer, $answer);
+    execute($task, $generator);
+}
+
+function getAnswer($a, $b)
+{
+    $a = abs($a);
+    $b = abs($b);
+
+    while ($a != $b) {
+        if ($a > $b) {
+            $a -= $b;
+        } else {
+            $b -= $a;
+        }
+    }
+    
+    return $a;
 }

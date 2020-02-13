@@ -1,17 +1,26 @@
 <?php
 
-use function BrainGames\CliMessage\getPlayerAnswer;
-use function BrainGames\Logic\makeNumber;
-use function BrainGames\Logic\getEvenAnswer;
-use function BrainGames\Logic\checkAnswer;
+namespace BrainGames\Even;
 
-function playRound()
+use function BrainGames\Helpers\makeNumber;
+use function BrainGames\Engine\execute;
+
+function play()
 {
-    $number = makeNumber();
-    $question = "$number";
-    $correctAnswer = getEvenAnswer($number);
+    $task = "Answer 'yes' if number even, otherwise answer 'no'.";
+    
+    $generator = function () {
+        $number = makeNumber();
+        $question = "$number";
+        $answer = getAnswer($number);
 
-    $answer = getPlayerAnswer($question);
+        return [$question, $answer];
+    };
 
-    return checkAnswer($correctAnswer, $answer);
+    execute($task, $generator);
+}
+
+function getAnswer($number)
+{
+    return ($number % 2 === 0) ? 'yes' : 'no';
 }

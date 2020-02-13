@@ -1,16 +1,31 @@
 <?php
 
-use function BrainGames\CliMessage\getPlayerAnswer;
-use function BrainGames\Logic\makeNumber;
-use function BrainGames\Logic\checkAnswer;
-use function BrainGames\Logic\getPrimeAnswer;
+namespace BrainGames\Prime;
 
-function playRound()
+use function BrainGames\Helpers\makeNumber;
+use function BrainGames\Engine\execute;
+
+function play()
 {
-    $number = makeNumber(1, 1000);
-    $correctAnswer = getPrimeAnswer($number);
+    $task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    
+    $generator = function () {
+        $number = makeNumber();
+        $answer = getAnswer($number);
 
-    $answer = getPlayerAnswer($number);
+        return [$number, $answer];
+    };
 
-    return checkAnswer($correctAnswer, $answer);
+    execute($task, $generator);
+}
+
+function getAnswer($number)
+{
+    for ($x = 2; $x <= sqrt($number); $x++) {
+        if ($number % $x == 0) {
+            return 'no';
+        }
+    }
+
+    return 'yes';
 }
