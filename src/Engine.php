@@ -4,7 +4,6 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Helpers\checkAnswer;
 
 function execute($task, $generate)
 {
@@ -13,30 +12,20 @@ function execute($task, $generate)
     $playerName = prompt('May I have your name?');
     line("Hello, %s!", $playerName);
 
-    // Play game rounds
-    $roundsLeft = 3;
-    $isWinner = true;
-
-    while ($roundsLeft > 0) {
+    for ($i = 0; $i < 3; $i++) {
         [$question, $answer] = $generate();
 
         line("Question: %s", $question);
         $playerAnswer = prompt('Answer');
 
-        if (checkAnswer($answer, $playerAnswer)) {
-            $roundsLeft--;
+        if ($answer == $playerAnswer) {
             line('Correct!');
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $playerAnswer, $answer);
-            $isWinner = false;
-            break;
+            line("Let's try again, %s!", $playerName);
+            return;
         }
     }
 
-    // End game, check winner
-    if ($isWinner) {
-        line("Congratulations, %s", $playerName);
-    } else {
-        line("Let's try again, %s!", $playerName);
-    }
+    line("Congratulations, %s", $playerName);
 }

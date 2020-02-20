@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-namespace BrainGames\Prime;
+namespace BrainGames\Games\Prime;
 
 $autoloadPath1 = __DIR__ . '/../vendor/autoload.php';
 $autoloadPath2 = __DIR__ . '/../../../autoload.php';

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Prime;
+namespace BrainGames\Games\Prime;
 
 use function BrainGames\Helpers\makeNumber;
 use function BrainGames\Engine\execute;
@@ -11,7 +11,7 @@ function play()
     
     $generator = function () {
         $number = makeNumber();
-        $answer = getAnswer($number);
+        $answer = getAnswer($number) ? 'yes' : 'no';
 
         return [$number, $answer];
     };
@@ -21,11 +21,15 @@ function play()
 
 function getAnswer($number)
 {
+    if ($number <= 1) {
+        return false;
+    }
+
     for ($x = 2; $x <= sqrt($number); $x++) {
         if ($number % $x == 0) {
-            return 'no';
+            return false;
         }
     }
 
-    return 'yes';
+    return false;
 }

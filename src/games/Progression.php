@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace BrainGames\Games\Progression;
 
 use function BrainGames\Helpers\makeNumber;
 use function BrainGames\Engine\execute;
@@ -14,9 +14,9 @@ function play()
         $step = makeNumber(2, 20);
         $progression = makeProgression($start, $step);
 
-        $itemHiddenId = array_rand($progression);
-        $answer = getAnswer($progression, $itemHiddenId);
-        $progression[$itemHiddenId] = '..';
+        $hiddenItemId = array_rand($progression);
+        $answer = $progression[$hiddenItemId];
+        $progression[$hiddenItemId] = '..';
         $question = implode(' ', $progression);
 
         return [$question, $answer];
@@ -25,18 +25,13 @@ function play()
     execute($task, $generator);
 }
 
-function makeProgression($start = 0, $step = 1, $qty = 10)
+function makeProgression($start = 0, $step = 1, $progressionLength = 10)
 {
     $result = [];
-    for ($i = 0; $i < $qty; $i++) {
+    for ($i = 0; $i < $progressionLength; $i++) {
         $item = $start + ($step * $i);
         array_push($result, $item);
     }
 
     return $result;
-}
-
-function getAnswer($progression, $id)
-{
-    return $progression[$id];
 }

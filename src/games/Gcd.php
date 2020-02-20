@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Helpers\makeNumber;
 use function BrainGames\Engine\execute;
@@ -23,16 +23,17 @@ function play()
 
 function getAnswer($a, $b)
 {
-    $a = abs($a);
-    $b = abs($b);
-
-    while ($a != $b) {
-        if ($a > $b) {
-            $a -= $b;
-        } else {
-            $b -= $a;
-        }
+    if ($a == $b) {
+        return $a;
     }
-    
-    return $a;
+
+    $border = (int) max([$a, $b]);
+
+    for ($i = $border; $i > 1; $i -= 1) {
+        if ($a % $i == 0 && $b % $i == 0) {
+            return $i;
+        }
+    }   
+
+    return 1;
 }
