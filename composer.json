@@ -4,7 +4,7 @@
     "keywords" : ["hexlet", "project", "brain-games"],
     "type": "project",
     "license": "MIT",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "authors": [
         {
             "name": "bunkua"
@@ -13,11 +13,11 @@
     "autoload": {
         "files": [
             "src/Engine.php",
-            "src/games/Calc.php",
-            "src/games/Even.php",
-            "src/games/Gcd.php",
-            "src/games/Prime.php",
-            "src/games/Progression.php",
+            "src/Games/Calc.php",
+            "src/Games/Even.php",
+            "src/Games/Gcd.php",
+            "src/Games/Prime.php",
+            "src/Games/Progression.php",
             "src/Helpers.php"
         ]
     },
