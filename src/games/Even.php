@@ -10,10 +10,10 @@ function play()
     $task = "Answer 'yes' if number even, otherwise answer 'no'.";
     
     $generate = function () {
-        $number = makeNumber();
-        $answer = ($number % 2 === 0) ? 'yes' : 'no';
+        $question = makeNumber();
+        $answer = ($question % 2 === 0) ? 'yes' : 'no';
 
-        return [(string) $number, $answer];
+        return [$question, $answer];
     };
 
     execute($task, $generate);

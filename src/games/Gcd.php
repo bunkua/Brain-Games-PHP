@@ -9,7 +9,7 @@ function play()
 {
     $task = "Find the greatest common divisor of given numbers.";
 
-    $generator = function () {
+    $generate = function () {
         $a = makeNumber();
         $b = makeNumber();
         $question = "$a and $b";
@@ -18,7 +18,7 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generator);
+    execute($task, $generate);
 }
 
 function getAnswer($a, $b)

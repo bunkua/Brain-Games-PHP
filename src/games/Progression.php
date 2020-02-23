@@ -9,10 +9,11 @@ function play()
 {
     $task = "What number is missing in the progression?";
 
-    $generator = function () {
+    $generate = function () {
         $start = makeNumber(1, 100);
         $step = makeNumber(2, 20);
-        $progression = makeProgression($start, $step);
+        $progressionLength = 10;
+        $progression = makeProgression($start, $step, $progressionLength);
 
         $hiddenItemId = array_rand($progression);
         $answer = $progression[$hiddenItemId];
@@ -22,10 +23,10 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generator);
+    execute($task, $generate);
 }
 
-function makeProgression($start = 0, $step = 1, $progressionLength = 10)
+function makeProgression($start, $step, $progressionLength)
 {
     $result = [];
     for ($i = 0; $i < $progressionLength; $i++) {

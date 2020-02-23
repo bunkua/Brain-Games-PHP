@@ -9,14 +9,14 @@ function play()
 {
     $task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     
-    $generator = function () {
-        $number = makeNumber();
-        $answer = getAnswer($number) ? 'yes' : 'no';
+    $generate = function () {
+        $question = makeNumber();
+        $answer = getAnswer($question) ? 'yes' : 'no';
 
-        return [$number, $answer];
+        return [$question, $answer];
     };
 
-    execute($task, $generator);
+    execute($task, $generate);
 }
 
 function getAnswer($number)

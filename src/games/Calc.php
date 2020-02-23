@@ -9,7 +9,7 @@ function play()
 {
     $task = "What is the result of the expression?";
 
-    $generator = function () {
+    $generate = function () {
         $a = makeNumber(1, 20);
         $b = makeNumber(1, 25);
         $operation = chooseOperation();
@@ -20,7 +20,7 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generator);
+    execute($task, $generate);
 }
 
 function chooseOperation()
