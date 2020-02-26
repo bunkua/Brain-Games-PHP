@@ -3,13 +3,13 @@
 namespace BrainGames\Games\Progression;
 
 use function BrainGames\Helpers\makeNumber;
-use function BrainGames\Engine\execute;
+use function BrainGames\Engine\play;
 
-function play()
+function prepare()
 {
     $task = "What number is missing in the progression?";
 
-    $generate = function () {
+    $generateGameData = function () {
         $start = makeNumber(1, 100);
         $step = makeNumber(2, 20);
         $progressionLength = 10;
@@ -23,7 +23,7 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generate);
+    play($task, $generateGameData);
 }
 
 function makeProgression($start, $step, $progressionLength)

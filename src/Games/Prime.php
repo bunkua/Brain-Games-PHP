@@ -3,23 +3,23 @@
 namespace BrainGames\Games\Prime;
 
 use function BrainGames\Helpers\makeNumber;
-use function BrainGames\Engine\execute;
+use function BrainGames\Engine\play;
 
-function play()
+function prepare()
 {
     $task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     
-    $generate = function () {
+    $generateGameData = function () {
         $question = makeNumber();
-        $answer = getAnswer($question) ? 'yes' : 'no';
+        $answer = isPrime($question) ? 'yes' : 'no';
 
         return [$question, $answer];
     };
 
-    execute($task, $generate);
+    play($task, $generateGameData);
 }
 
-function getAnswer($number)
+function isPrime($number)
 {
     if ($number <= 1) {
         return false;

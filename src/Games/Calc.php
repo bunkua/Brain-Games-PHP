@@ -3,13 +3,13 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\Helpers\makeNumber;
-use function BrainGames\Engine\execute;
+use function BrainGames\Engine\play;
 
-function play()
+function prepare()
 {
     $task = "What is the result of the expression?";
 
-    $generate = function () {
+    $generateGameData = function () {
         $a = makeNumber(1, 20);
         $b = makeNumber(1, 25);
         $operation = chooseOperation();
@@ -20,7 +20,7 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generate);
+    play($task, $generateGameData);
 }
 
 function chooseOperation()

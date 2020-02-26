@@ -3,13 +3,13 @@
 namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Helpers\makeNumber;
-use function BrainGames\Engine\execute;
+use function BrainGames\Engine\play;
 
-function play()
+function prepare()
 {
     $task = "Find the greatest common divisor of given numbers.";
 
-    $generate = function () {
+    $generateGameData = function () {
         $a = makeNumber();
         $b = makeNumber();
         $question = "$a and $b";
@@ -18,7 +18,7 @@ function play()
         return [$question, $answer];
     };
 
-    execute($task, $generate);
+    play($task, $generateGameData);
 }
 
 function getAnswer($a, $b)
