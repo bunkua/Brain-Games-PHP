@@ -31,5 +31,5 @@ function isPrime($number)
         }
     }
 
-    return false;
+    return true;
 }
